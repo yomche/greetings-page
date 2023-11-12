@@ -1,0 +1,15 @@
+.button {
+  display      : inline-block;
+  width        : max-content;
+  color        : var(--dark-gray);
+  padding      : 12px 20px;
+  border-radius: 10px;
+  cursor       : pointer;
+  border       : 1px solid var(--dark-gray);
+  transition   : all 400ms ease;
+
+  &.primary {
+    color     : var(--beige);
+    background: var(--dark-gray);
+  }
+}

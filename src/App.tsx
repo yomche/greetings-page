@@ -1,8 +1,9 @@
-import { Navigation } from "./components";
+import { Navigation, Header } from "@components";
 
 function App() {
   return (
     <>
+      <Header />
       <Navigation />
     </>
   );

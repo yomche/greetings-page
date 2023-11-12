@@ -1,0 +1,20 @@
+.link {
+  display      : flex;
+  padding      : 14px;
+  border-radius: 50%;
+  color        : var(--beige);
+  background   : transparent;
+
+  &.active {
+    color     : var(--white);
+    background: var(--dark-gray);
+
+    &:hover {
+      background: var(--dark-gray);
+    }
+  }
+
+  &:hover {
+    background: var(--middle-gray);
+  }
+}
