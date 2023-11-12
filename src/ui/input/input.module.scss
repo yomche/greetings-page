@@ -1,0 +1,17 @@
+.input {
+  input {
+    font-size    : 18px;
+    font-family  : "Crassula";
+    width        : 100%;
+    padding      : 15px;
+    border-radius: 8px;
+    background   : transparent;
+    border       : 2px solid var(--deep-beige);
+    position     : relative;
+
+    .error {
+      position: absolute;
+      bottom  : 0;
+    }
+  }
+}

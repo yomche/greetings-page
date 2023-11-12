@@ -23,7 +23,7 @@ export const LinkButton = ({
       onClick={() => action?.()}
       className={classNames(
         styles.button,
-        type === "primary" && styles.primary
+        type === "primary" && styles.primary,
       )}
     >
       {title}

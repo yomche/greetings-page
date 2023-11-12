@@ -13,6 +13,11 @@
     background: var(--dark-gray);
   }
 
+  &.disabled {
+    color     : var(--dark-gray);
+    background: var(--middle-gray);
+  }
+
   &:hover {
     color       : var(--beige);
     background  : var(--deep-beige);

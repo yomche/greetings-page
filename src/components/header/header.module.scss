@@ -15,14 +15,14 @@ header {
       display       : flex;
       flex-direction: column;
       align-items   : center;
-      gap           : .8rem;
+      gap           : 12px;
       position      : absolute;
       left          : 0;
       bottom        : 48px;
 
       a {
         font-size: 22px;
-        color    : var(--dыark-gray);
+        color    : var(--dark-gray);
 
         &:hover {
           color: var(--deep-beige);
