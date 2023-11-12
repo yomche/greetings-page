@@ -1,5 +1,3 @@
-@import 'colors';
-
 * {
   margin         : 0;
   padding        : 0;
@@ -11,18 +9,12 @@
 }
 
 :root {
-  font-family             : Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height             : 1.7;
-  font-weight             : 400;
-
-  color                   : var(--dark-gray);
-  background-color        : var(--beige);
-
-  font-synthesis          : none;
-  text-rendering          : optimizeLegibility;
-  -webkit-font-smoothing  : antialiased;
-  -moz-osx-font-smoothing : grayscale;
-  -webkit-text-size-adjust: 100%;
+  --white      : #ffffff;
+  --beige      : #F4E6E0;
+  --middle-gray: #716F6F;
+  --deep-gray  : #4F4D4D;
+  --dark-gray  : #3E3E3E;
+  --black      : #222121;
 }
 
 html {
@@ -31,4 +23,32 @@ html {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+body {
+  font-family     : "Poppins", sans-serif;
+  color           : var(--dark-gray);
+  background-color: var(--beige);
+  line-height     : 1.7;
+  font-weight     : 700;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+h4 {
+  font-size: 19px;
+}
+
+h5 {
+  font-size: 17px;
 }

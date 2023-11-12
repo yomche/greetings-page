@@ -8,8 +8,9 @@ export const Navigation = () => {
 
   return (
     <nav className={styles.navigation}>
-      {havBarLinks.map((link) => (
+      {havBarLinks.map((link, idx) => (
         <LinkIcon
+          key={idx}
           link={link.path}
           action={() => setCurrentNav(link.path)}
           isActive={currentNav === link.path}
