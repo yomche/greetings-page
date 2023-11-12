@@ -1,13 +1,36 @@
 import { MdOutlineEmail } from "react-icons/md";
 import { BsWhatsapp, BsTelegram } from "react-icons/bs";
-import { Banner, LinkButton, TextArea, TextInput } from "@ui";
-import styles from "./contact.module.scss";
+import { Banner } from "@ui";
+import { useRef } from "react";
 import classNames from "classnames";
-import { useContact } from "./useContact";
+import styles from "./contact.module.scss";
+
+import emailjs from "@emailjs/browser";
 
 export const Contact = () => {
-  const { formFields, emailError, onTextChange, onEmailChange, submitForm } =
-    useContact();
+  const form = useRef<unknown>();
+  const submitForm = (event: unknown) => {
+    event.preventDefault();
+    console.log(form.current);
+    form.current &&
+      emailjs
+        .sendForm(
+          "service_zxx0i78",
+          "template_x3vs6wm",
+          form.current,
+          "SKAY5YTxZAXeCZrxq"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+
+    event.target.reset();
+  };
 
   return (
     <div className={classNames("main", styles.container)} id="contact">
@@ -33,29 +56,24 @@ export const Contact = () => {
             link={"https://t.me/yomche"}
           />
         </div>
-        <div className={styles.form}>
-          <TextInput
-            name={"name"}
-            placeholder={"Please enter your name"}
-            value={formFields.name}
-            onInputChange={(value) => onTextChange("name", value)}
+        <form ref={form} onSubmit={submitForm} className={styles.form}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Full Name"
+            required
           />
-          <TextInput
-            name={"email"}
-            placeholder={"Please enter your email"}
-            value={formFields.email}
-            onInputChange={(value) => onEmailChange("email", value)}
-            errorMessage="Please enter valid email"
-            error={emailError}
-          />
-          <TextArea
-            name={"message"}
-            placeholder={"Please enter your message"}
-            value={formFields.message}
-            onInputChange={(value) => onTextChange("message", value)}
-          />
-          <LinkButton title={"Send message"} action={submitForm} />
-        </div>
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            rows={7}
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit" className={styles.button}>
+            Send Message
+          </button>
+        </form>
       </div>
     </div>
   );
