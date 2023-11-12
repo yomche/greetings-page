@@ -1,3 +1,16 @@
+@font-face {
+  font-family: "Crassula";
+  src        : url("./font/crassula/crassula_medium.woff2") format("woff2"), url("./font/crassula/crassula_medium.woff") format("woff");
+  font-weight: normal;
+  font-style : normal;
+}
+@font-face {
+  font-family: "Motzeda";
+  src        : url("./font/motzeda/motzeda_italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style : normal;
+}
+
 * {
   margin         : 0;
   padding        : 0;
