@@ -1,0 +1,37 @@
+.navigation {
+  background   : var(--light-gray);
+  width        : max-content;
+  display      : block;
+  padding      : .7rem 1.7rem;
+  z-index      : 2;
+  position     : fixed;
+  left         : 50%;
+  transform    : translateX(-50%);
+  bottom       : 2rem;
+  display      : flex;
+  gap          : .8rem;
+  border-radius: 3rem;
+  backdrop-filter: blur(15px);
+
+  a {
+    background   : transparent;
+    padding      : .9rem;
+    border-radius: 50%;
+    display      : flex;
+    color        : var(--white);
+    font-size    : 1.1rem;
+
+    &.active {
+      background: var(--blue);
+      color     : var(--navy-blue);
+
+      &:hover {
+        background: var(--blue);
+      }
+    }
+
+    &:hover {
+      background: var(--light-gray);
+    }
+  }
+}
