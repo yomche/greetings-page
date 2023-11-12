@@ -1,0 +1,26 @@
+.banner {
+  color        : var(--white);
+  background   : var(--deep-beige);
+  text-align   : center;
+  padding      : 20px;
+  border-radius: 20px;
+  border       : 1px solid transparent;
+  transition   : all 400ms ease;
+  width        : 280px;
+  height       : 164px;
+
+  &:hover {
+    background  : var(--beige);
+    border-color: var(--deep-beige);
+    color       : var(--deep-beige);
+  }
+
+  a {
+    color      : var(--dark-gray);
+    font-weight: 700;
+
+    &:hover {
+      color: var(--deep-beige);
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.container {
+  width : 75%;
+  margin: 0 auto 100px;
+
+  .wrapper {
+    display       : flex;
+    flex-direction: row;
+    gap           : 30px;
+
+    .options {
+      width         : fit-content;
+      display       : flex;
+      flex-direction: column;
+      gap           : 10px;
+    }
+
+    form {
+      display       : flex;
+      flex-direction: column;
+      gap           : 20px;
+    }
+  }
+}
