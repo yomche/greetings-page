@@ -1,0 +1,33 @@
+.footer {
+  color     : var(--beige);
+  background: var(--dark-gray);
+  padding   : 100px 0;
+  font-size : 17px;
+
+  footer {
+    width         : 75%;
+    margin        : 0 auto;
+    display       : flex;
+    flex-direction: column;
+    gap           : 60px;
+
+    .links {
+      display        : flex;
+      gap            : 32px;
+      justify-content: center;
+
+      a {
+        color: var(--beige);
+
+        &:hover {
+          color: var(--deep-beige);
+        }
+      }
+    }
+
+    .copyright {
+      display        : flex;
+      justify-content: center;
+    }
+  }
+}

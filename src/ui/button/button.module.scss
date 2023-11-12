@@ -12,4 +12,10 @@
     color     : var(--beige);
     background: var(--dark-gray);
   }
+
+  &:hover {
+    color       : var(--beige);
+    background  : var(--deep-beige);
+    border-color: var(--deep-beige);
+  }
 }

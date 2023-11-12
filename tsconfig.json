@@ -20,7 +20,8 @@
       "@/*": ["src/*"],
       "@components": ["src/components"],
       "@assets": ["src/assets"],
-      "@ui": ["src/ui"]
+      "@ui": ["src/ui"],
+      "@constants": ["src/constants"]
     },
     "types": ["node"]
   },

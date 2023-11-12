@@ -11,6 +11,7 @@
 :root {
   --white      : #ffffff;
   --beige      : #F4E6E0;
+  --deep-beige : #B6A89C;
   --middle-gray: #716F6F;
   --deep-gray  : #4F4D4D;
   --dark-gray  : #3E3E3E;
@@ -30,25 +31,14 @@ body {
   color           : var(--dark-gray);
   background-color: var(--beige);
   line-height     : 1.7;
-  font-weight     : 700;
+
 }
 
 h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 24px;
-}
-
-h3 {
-  font-size: 21px;
-}
-
-h4 {
-  font-size: 19px;
+  font-size  : 40px;
+  font-weight: 700;
 }
 
 h5 {
-  font-size: 17px;
+  font-size: 19px;
 }

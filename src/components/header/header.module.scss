@@ -9,11 +9,21 @@
     position  : relative;
     text-align: center;
 
-    .cta {
+    .contact {
       display        : flex;
       gap            : 20px;
       justify-content: center;
       margin-top     : 40px;
+
+      .photo {
+        position     : absolute;
+        background   : linear-gradient(var(--dark-gray), transparent);
+        width        : 350px;
+        height       : 480px;
+        margin-top   : 90px;
+        border-radius: 190px 190px 0 0;
+        padding      : 80px 24px 24px;
+      }
     }
 
     .socials {
@@ -26,7 +36,19 @@
       bottom        : 48px;
 
       a {
-        color: var(--dark-gray);
+        font-size: 20px;
+        color    : var(--dark-gray);
+
+        &:hover {
+          color: var(--deep-beige);
+        }
+      }
+
+      &::after {
+        content   : "";
+        width     : 1px;
+        height    : 32px;
+        background: var(--dark-gray);
       }
     }
   }

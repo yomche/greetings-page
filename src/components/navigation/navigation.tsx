@@ -1,14 +1,14 @@
 import { useState } from "react";
-import styles from "./navigation.module.scss";
 import { LinkIcon } from "@ui";
-import { havBarLinks } from "@/constants/navLinks";
+import { navLinks } from "@constants";
+import styles from "./navigation.module.scss";
 
 export const Navigation = () => {
   const [currentNav, setCurrentNav] = useState("#");
 
   return (
     <nav className={styles.navigation}>
-      {havBarLinks.map((link, idx) => (
+      {navLinks.map((link, idx) => (
         <LinkIcon
           key={idx}
           link={link.path}
