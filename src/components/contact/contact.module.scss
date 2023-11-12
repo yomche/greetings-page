@@ -1,23 +1,43 @@
 .container {
-  width : 75%;
-  margin: 0 auto 100px;
+  text-align: center;
+  padding   : 100px 0;
+  width     : 60%;
+  @media screen and (max-width: 600px) {
+    padding-top: 140px;
+  }
 
   .wrapper {
-    display       : flex;
-    flex-direction: row;
-    gap           : 30px;
+    display              : grid;
+    justify-content      : center;
+    grid-template-columns: minmax(150px, 20vw) minmax(250px,35vw);
+    gap                  : 50px;
 
     .options {
-      width         : fit-content;
       display       : flex;
       flex-direction: column;
-      gap           : 10px;
+      gap           : 20px;
     }
 
     form {
       display       : flex;
       flex-direction: column;
       gap           : 20px;
+    }
+
+    input,
+    textarea {
+      width        : 100%;
+      padding      : 1.5rem;
+      border-radius: .5rem;
+      background   : transparent;
+      border       : 2px solid var(--deep-beige);
+      resize       : none;
+      color        : var(--color-white);
+    }
+    @media screen and (max-width: 600px) {
+      grid-template-columns: 1fr;
+      gap                  : 32px;
+      align-items          : center;
     }
   }
 }

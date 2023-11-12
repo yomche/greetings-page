@@ -4,7 +4,7 @@ import styles from "./footer.module.scss";
 export const Footer = () => {
   return (
     <div className={styles.footer}>
-      <footer>
+      <footer className="main">
         <div className={styles.links}>
           {navLinks.map((link, idx) => (
             <a href={link.path} key={idx}>

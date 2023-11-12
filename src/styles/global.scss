@@ -29,6 +29,8 @@
   --deep-gray  : #4F4D4D;
   --dark-gray  : #3E3E3E;
   --black      : #222121;
+  --lg-width   : 75%;
+  --sm-width   : 90%;
 }
 
 html {
@@ -40,7 +42,7 @@ html {
 }
 
 body {
-  font-family     : "Poppins", sans-serif;
+  font-family     : "Crassula";
   color           : var(--dark-gray);
   background-color: var(--beige);
   line-height     : 1.7;
@@ -48,10 +50,21 @@ body {
 }
 
 h1 {
+  font-family: 'Motzeda';
   font-size  : 40px;
   font-weight: 700;
 }
 
 h5 {
   font-size: 19px;
+}
+
+.main {
+  width : var(--lg-width);
+  margin: 0 auto;
+}
+@media screen and (max-width: 600px) {
+  .main {
+    width: var(--sm-width);
+  }
 }

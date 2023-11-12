@@ -1,47 +1,28 @@
-.header {
-  width      : 75%;
+header {
   height     : 100vh;
-  margin     : 0 auto;
-  padding-top: 64px;
+  padding-top: 80px;
+  overflow   : hidden;
+  @media screen and (max-width: 600px) {
+    height: 90vh;
+  }
 
   .container {
     height    : 100%;
     position  : relative;
     text-align: center;
 
-    h1 {
-      font-family: 'Motzeda';
-    }
-
-    .contact {
-      display        : flex;
-      gap            : 20px;
-      justify-content: center;
-      margin-top     : 40px;
-
-      .photo {
-        position     : absolute;
-        background   : linear-gradient(var(--dark-gray), transparent);
-        width        : 350px;
-        height       : 480px;
-        margin-top   : 90px;
-        border-radius: 190px 190px 0 0;
-        padding      : 80px 24px 24px;
-      }
-    }
-
     .socials {
       display       : flex;
       flex-direction: column;
       align-items   : center;
-      gap           : 13px;
+      gap           : .8rem;
       position      : absolute;
       left          : 0;
       bottom        : 48px;
 
       a {
-        font-size: 20px;
-        color    : var(--dark-gray);
+        font-size: 22px;
+        color    : var(--dыark-gray);
 
         &:hover {
           color: var(--deep-beige);
@@ -53,6 +34,30 @@
         width     : 1px;
         height    : 32px;
         background: var(--dark-gray);
+      }
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+    }
+
+    .contact {
+      display        : flex;
+      gap            : 20px;
+      justify-content: center;
+      margin-top     : 40px;
+
+      .photo {
+        position     : absolute;
+        background   : linear-gradient(var(--deep-beige), transparent);
+        width        : 350px;
+        height       : 480px;
+        margin-top   : 90px;
+        border-radius: 190px 190px 0 0;
+        padding      : 80px 24px 24px;
+
+        img {
+          height: 480px;
+        }
       }
     }
   }

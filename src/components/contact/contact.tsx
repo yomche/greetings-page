@@ -1,31 +1,32 @@
+import classNames from "classnames";
 import { MdOutlineEmail } from "react-icons/md";
 import { BsWhatsapp, BsTelegram } from "react-icons/bs";
+import { Banner, LinkButton } from "@ui";
 import styles from "./contact.module.scss";
-import { Banner } from "@ui";
 
 export const Contact = () => {
   return (
-    <div className={styles.container} id="contact">
-      <h2>Contact Me</h2>
+    <div className={classNames("main", styles.container)} id="contact">
+      <h1>Contact Me</h1>
       <div className={styles.wrapper}>
         <div className={styles.options}>
           <Banner
-            title={"Email"}
-            description={"email"}
+            title={"E-mail"}
+            description={"katerina.smirnova98@ya.ru"}
             icon={<MdOutlineEmail />}
-            link={"mailto:email"}
+            link={"mailto:katerina.smirnova98@yandex.ru"}
           />
           <Banner
-            title={"Whatsapp"}
-            description={"Whatsapp"}
+            title={"WhatsApp"}
+            description={"+7 (964) 165 07 51"}
             icon={<BsWhatsapp />}
-            link={"https://api.whatsapp.com/send?phone=w"}
+            link={"https://api.whatsapp.com/send?phone=79641650751"}
           />
           <Banner
             title={"Telegram"}
-            description={"Telegram"}
+            description={"@yomche"}
             icon={<BsTelegram />}
-            link={"https://api.whatsapp.com/send?phone=we"}
+            link={"https://t.me/yomche"}
           />
         </div>
         <form onSubmit={() => null}>
@@ -42,9 +43,7 @@ export const Contact = () => {
             placeholder="Your Message"
             required
           ></textarea>
-          <button type="submit" className="btn btn-primary">
-            Send Message
-          </button>
+          <LinkButton title={"Send message"} />
         </form>
       </div>
     </div>

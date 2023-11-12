@@ -1,4 +1,4 @@
-import { CV } from "@assets";
+import { CV, photo1 } from "@assets";
 import { BsLinkedin } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { LinkButton } from "@ui";
@@ -6,26 +6,26 @@ import styles from "./header.module.scss";
 
 export const Header = () => {
   return (
-    <div className={styles.header}>
-      <header>
-        <div className={styles.container}>
-          <h5>Hello I'm</h5>
-          <h1>Ekaterina</h1>
-          <h5>Frontend Developer</h5>
-          <div className={styles.contact}>
-            <LinkButton
-              link={CV}
-              download
-              type={"secondary"}
-              title={"Download CV"}
-            />
-            <div className={styles.photo}></div>
-            <LinkButton link={"#contact"} title={"Contact me"} />
+    <header className={"main"}>
+      <div className={styles.container}>
+        <h5>Hello I'm</h5>
+        <h1>Ekaterina</h1>
+        <h5>Frontend Developer</h5>
+        <div className={styles.contact}>
+          <LinkButton
+            link={CV}
+            download
+            type={"secondary"}
+            title={"Download CV"}
+          />
+          <div className={styles.photo}>
+            <img src={photo1} alt="Ekaterina Dorozhkina" />
           </div>
-          <SocialLinks />
+          <LinkButton link={"#contact"} title={"Contact me"} />
         </div>
-      </header>
-    </div>
+        <SocialLinks />
+      </div>
+    </header>
   );
 };
 
