@@ -1,7 +1,7 @@
 {
   "name": "greetings-page",
   "private": true,
-  "homepage": "https://yomche.github.io/greetings-page/",
+  "homepage": "https://yomche.github.io/greetings-page",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
