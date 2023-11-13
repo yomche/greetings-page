@@ -50,10 +50,11 @@ header {
         position     : absolute;
         background   : linear-gradient(var(--deep-beige), transparent);
         width        : 350px;
-        height       : 480px;
+        height       : 560px;
         margin-top   : 90px;
         border-radius: 190px 190px 0 0;
-        padding      : 80px 24px 24px;
+        padding      : 45px 24px 24px;
+        overflow-x   : hidden;
 
         img {
           height: 480px;

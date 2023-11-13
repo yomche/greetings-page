@@ -1,4 +1,4 @@
-import { CV, photo1 } from "@assets";
+import { CV, profilePhoto } from "@assets";
 import { BsLinkedin } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { LinkButton } from "@ui";
@@ -19,7 +19,7 @@ export const Header = () => {
             title={"Download CV"}
           />
           <div className={styles.photo}>
-            <img src={photo1} alt="Ekaterina Dorozhkina" />
+            <img src={profilePhoto} alt="Ekaterina Dorozhkina" />
           </div>
           <LinkButton link={"#contact"} title={"Contact me"} />
         </div>
