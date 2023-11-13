@@ -12,9 +12,7 @@ export const Footer = () => {
             </a>
           ))}
         </div>
-        <small className={styles.copyright}>
-          Ekaterina Dorozhkina 2023 © All rights reserved
-        </small>
+        <small className={styles.copyright}>yomche © 2023</small>
       </footer>
     </div>
   );
