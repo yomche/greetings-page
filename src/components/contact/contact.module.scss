@@ -6,7 +6,7 @@
   .wrapper {
     display              : grid;
     justify-content      : center;
-    grid-template-columns: minmax(150px, 20vw) minmax(250px,35vw);
+    grid-template-columns: minmax(150px, 20vw) minmax(250px, 35vw);
     gap                  : 50px;
 
     .options {
