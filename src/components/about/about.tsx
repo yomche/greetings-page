@@ -1,10 +1,9 @@
-import classNames from "classnames";
+import { AiOutlineBank, AiOutlineTrophy } from "react-icons/ai";
 import { FaAward } from "react-icons/fa";
-import { FiUsers } from "react-icons/fi";
-import { VscFolderLibrary } from "react-icons/vsc";
 import { profileFrame } from "@assets";
-import styles from "./about.module.scss";
 import { Banner } from "@ui";
+import classNames from "classnames";
+import styles from "./about.module.scss";
 
 export const About = () => {
   return (
@@ -26,12 +25,12 @@ export const About = () => {
             <Banner
               title={"Courses"}
               description={"EPAM Training Center"}
-              icon={<FiUsers />}
+              icon={<AiOutlineTrophy />}
             />
             <Banner
               title={"Education"}
               description={"Tver State University"}
-              icon={<VscFolderLibrary />}
+              icon={<AiOutlineBank />}
             />
           </div>
           <div className={styles.description}>
