@@ -30,15 +30,17 @@ export const About = () => {
             />
             <Banner
               title={"Education"}
-              description={
-                "Tver State University"
-              }
+              description={"Tver State University"}
               icon={<VscFolderLibrary />}
             />
           </div>
-          <p>
-            test
-          </p>
+          <div className={styles.description}>
+            Frontend developer with 1.5+ years of experience. Successfully
+            completed an internship at EPAM Systems Training Center followed by
+            employment with the company.
+            <br />I specialize in developing React applications using Redux,
+            TypeScript, Next.js, etc.
+          </div>
         </div>
       </div>
     </div>

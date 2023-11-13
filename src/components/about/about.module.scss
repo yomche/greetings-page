@@ -50,6 +50,11 @@
         grid-template-columns: repeat(auto-fit, minmax(210px, auto));
         gap                  : 24px;
       }
+
+      .description {
+        margin-top: 20px;
+        font-size : 18px;
+      }
     }
     @media screen and (max-width: 1024px) {
       grid-template-columns: 1fr;
