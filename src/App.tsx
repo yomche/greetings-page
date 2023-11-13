@@ -1,13 +1,21 @@
-import { Header, Navigation, Contact, Footer, About } from "@components";
+import {
+  Header,
+  Navigation,
+  Contact,
+  Footer,
+  About,
+  Experience,
+} from "@components";
 
 function App() {
   return (
     <>
       <Header />
       <About />
+      <Experience />
       <Contact />
-      <Navigation />
       <Footer />
+      <Navigation />
     </>
   );
 }
