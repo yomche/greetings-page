@@ -1,0 +1,22 @@
+.status {
+  font-size: 18px;
+  width    : fit-content;
+  position : absolute;
+  bottom   : 0;
+
+  &.sent {
+    color: var(--success);
+  }
+
+  &.sending {
+    color: var(--loading);
+  }
+
+  &.error {
+    color: var(--error);
+  }
+  @media screen and (max-width: 600px) {
+    bottom: 8px;
+    left  : 155px;
+  }
+}

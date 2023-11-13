@@ -1,32 +1,12 @@
 import { MdOutlineEmail } from "react-icons/md";
 import { BsWhatsapp, BsTelegram } from "react-icons/bs";
-import { Banner } from "@ui";
-import { useRef } from "react";
+import { Banner, Status } from "@ui";
+import { useContact } from "./useContact";
 import classNames from "classnames";
 import styles from "./contact.module.scss";
-import emailjs from "@emailjs/browser";
-
-const SERVICE_ID = import.meta.env.VITE_APP_SERVICE_ID;
-const TEMPLATE_ID = import.meta.env.VITE_APP_TEMPLATE_ID;
-const USER_ID = import.meta.env.VITE_APP_USER_ID;
 
 export const Contact = () => {
-  const form = useRef<unknown>();
-  const submitForm = (event: unknown) => {
-    event.preventDefault();
-    console.log(form.current);
-    form.current &&
-      emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, USER_ID).then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-
-    event.target.reset();
-  };
+  const { contactForm, status, submitForm } = useContact();
 
   return (
     <div className={classNames("main", styles.container)} id="contact">
@@ -35,9 +15,9 @@ export const Contact = () => {
         <div className={styles.options}>
           <Banner
             title={"E-mail"}
-            description={"katerina.smirnova98@ya.ru"}
+            description={"yomi1698@gmail.com"}
             icon={<MdOutlineEmail />}
-            link={"mailto:katerina.smirnova98@yandex.ru"}
+            link={"mailto:yomi1698@gmail.com"}
           />
           <Banner
             title={"WhatsApp"}
@@ -52,24 +32,32 @@ export const Contact = () => {
             link={"https://t.me/yomche"}
           />
         </div>
-        <form ref={form} onSubmit={submitForm} className={styles.form}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Full Name"
-            required
-          />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea
-            name="message"
-            rows={7}
-            placeholder="Your Message"
-            required
-          ></textarea>
-          <button type="submit" className={styles.button}>
-            Send Message
-          </button>
-        </form>
+        <div className={styles.formWrapper}>
+          <form ref={contactForm} onSubmit={submitForm} className={styles.form}>
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Full Name"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <textarea
+              name="message"
+              rows={7}
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <button type="submit" className={styles.button}>
+              Send Message
+            </button>
+          </form>
+          <Status status={status?.type} message={status?.message} />
+        </div>
       </div>
     </div>
   );

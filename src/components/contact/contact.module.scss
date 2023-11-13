@@ -18,41 +18,48 @@
       gap           : 20px;
     }
 
-    .form {
+    .formWrapper {
       display       : flex;
       flex-direction: column;
-      gap           : 20px;
+      gap           : 10px;
+      position      : relative;
 
-      input,
-      textarea {
-        font-size    : 18px;
-        font-family  : "Crassula";
-        width        : 100%;
-        padding      : 24px;
-        border-radius: 8px;
-        background   : transparent;
-        border       : 2px solid var(--deep-beige);
-        resize       : none;
-        color        : var(--color-white);
-      }
+      .form {
+        display       : flex;
+        flex-direction: column;
+        gap           : 20px;
 
-      .button {
-        display      : inline-block;
-        width        : max-content;
-        color        : var(--dark-gray);
-        background   : var(--beige);
-        padding      : 12px 20px;
-        border-radius: 10px;
-        cursor       : pointer;
-        border       : 1px solid var(--dark-gray);
-        transition   : all 400ms ease;
-        font-size    : 16px;
-        font-family  : "Crassula";
+        input,
+        textarea {
+          font-size    : 18px;
+          font-family  : "Crassula";
+          width        : 100%;
+          padding      : 24px;
+          border-radius: 8px;
+          background   : transparent;
+          border       : 2px solid var(--deep-beige);
+          resize       : none;
+          color        : var(--color-white);
+        }
 
-        &:hover {
-          color       : var(--beige);
-          background  : var(--deep-beige);
-          border-color: var(--deep-beige);
+        .button {
+          display      : inline-block;
+          width        : max-content;
+          color        : var(--dark-gray);
+          background   : var(--beige);
+          padding      : 12px 20px;
+          border-radius: 10px;
+          cursor       : pointer;
+          border       : 1px solid var(--dark-gray);
+          transition   : all 400ms ease;
+          font-size    : 16px;
+          font-family  : "Crassula";
+
+          &:hover {
+            color       : var(--beige);
+            background  : var(--deep-beige);
+            border-color: var(--deep-beige);
+          }
         }
       }
     }
