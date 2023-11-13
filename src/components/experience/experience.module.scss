@@ -117,12 +117,14 @@
 
           &.progress {
             &:before {
+              border-radius   : inherit;
               background-color: rgba(239, 239, 244, 0.8);
             }
           }
 
           &.active {
             &:before {
+              border-radius   : inherit;
               background-color: rgba(239, 239, 244, 0.8);
               width           : 100%;
             }
