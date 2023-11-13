@@ -19,7 +19,7 @@ export const About = () => {
           <div className={styles.banners}>
             <Banner
               title={"Experience"}
-              description={"1,5+ year"}
+              description={"1,5+ years"}
               icon={<FaAward />}
             />
             <Banner

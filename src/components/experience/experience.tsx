@@ -1,5 +1,6 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+import { BsPatchCheckFill } from "react-icons/bs";
 import { Autoplay } from "swiper/modules";
 import { stories } from "@constants";
 import classNames from "classnames";
@@ -22,7 +23,54 @@ export const Experience = () => {
     <div id="experience" className={classNames("main", styles.container)}>
       <h1>My Experience</h1>
       <div className={styles.wrapper}>
-        <div className={styles.experience}></div>
+        <div className={styles.experience}>
+          <h3>Frontend Development</h3>
+
+          <div className={styles.content}>
+            <article className={styles.details}>
+              <BsPatchCheckFill className={styles.icon} />
+              <div className={styles.detail}>
+                <h4>HTML</h4>
+                <small>Intermediate</small>
+              </div>
+            </article>
+            <article className={styles.details}>
+              <BsPatchCheckFill className={styles.icon} />
+              <div className={styles.detail}>
+                <h4>CSS</h4>
+                <small>Intermediate</small>
+              </div>
+            </article>
+            <article className={styles.details}>
+              <BsPatchCheckFill className={styles.icon} />
+              <div className={styles.detail}>
+                <h4>JavaScript</h4>
+                <small>Intermediate</small>
+              </div>
+            </article>
+            <article className={styles.details}>
+              <BsPatchCheckFill className={styles.icon} />
+              <div className={styles.detail}>
+                <h4>React</h4>
+                <small>Intermediate</small>
+              </div>
+            </article>
+            <article className={styles.details}>
+              <BsPatchCheckFill className={styles.icon} />
+              <div className={styles.detail}>
+                <h4>TypeScript</h4>
+                <small>Intermediate</small>
+              </div>
+            </article>
+            <article className={styles.details}>
+              <BsPatchCheckFill className={styles.icon} />
+              <div className={styles.detail}>
+                <h4>Next.js</h4>
+                <small>Intermediate</small>
+              </div>
+            </article>
+          </div>
+        </div>
         <div className={styles.swiper}>
           <Swiper
             slidesPerView={"auto"}
