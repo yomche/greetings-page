@@ -17,11 +17,11 @@
     "jsx": "react-jsx",
     "baseUrl": "./src",
     "paths": {
-      "@/*": ["src/*"],
-      "@components": ["src/components"],
-      "@assets": ["src/assets"],
-      "@ui": ["src/ui"],
-      "@constants": ["src/constants"]
+      "@/*": ["*"],
+      "@components": ["components"],
+      "@assets": ["assets"],
+      "@ui": ["ui"],
+      "@constants": ["constants"]
     },
     "types": ["node"]
   },

@@ -36,13 +36,13 @@ export const Contact = () => {
           <form ref={contactForm} onSubmit={submitForm} className={styles.form}>
             <input
               type="text"
-              name="name"
+              name="user_name"
               placeholder="Your Full Name"
               required
             />
             <input
               type="email"
-              name="email"
+              name="user_email"
               placeholder="Your Email"
               required
             />
