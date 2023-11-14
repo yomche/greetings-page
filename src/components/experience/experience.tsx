@@ -94,6 +94,7 @@ export const Experience = ({
               setSliderId(sliderId !== 1 ? sliderId - 1 : 1);
             }}
           >
+            <div className={styles.slideTitle}></div>
             {stories.map((story) => (
               <SwiperSlide className={styles.slide} key={story.id}>
                 <p className={styles.title}>{story.name}</p>

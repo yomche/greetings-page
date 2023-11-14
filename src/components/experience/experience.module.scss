@@ -63,54 +63,16 @@
       border       : 1px solid var(--deep-beige);
       height       : 600px;
 
-      .slide {
-        text-align     : center;
-        font-size      : 18px;
-        background     : var(--beige);
-        width          : 100% !important;
-        height         : 600px !important;
-        display        : flex !important;
-        justify-content: center !important;
-        align-items    : center !important;
-        position       : relative;
-        overflow       : hidden;
-
-        .title {
-          z-index      : 10;
-          top          : 0;
-          padding-top  : 30px;
-          border-radius: 0 0 32px 32px;
-          box-shadow   : 4px 0 16px rgba(0, 0, 0, 0.2);
-          width        : fit-content;
-          position     : absolute;
-          height       : 85px;
-          width        : 100%;
-          background   : var(--deep-beige);
-        }
-
-        .image {
-          height         : 600px;
-          top            : 0;
-          position       : absolute;
-          background-size: cover;
-        }
-
-        .button {
-          bottom       : 30px;
-          position     : absolute;
-          width        : 80%;
-          padding      : 10px;
-          border-radius: 15px;
-          border       : 1px solid var(--dark-gray);
-          background   : var(--beige);
-          color        : var(--dark-gray);
-
-          &:hover {
-            border    : 1px solid var(--deep-beige);
-            color     : var(--beige);
-            background: var(--deep-beige);
-          }
-        }
+      .slideTitle {
+        position     : absolute;
+        top          : 0;
+        z-index      : 10;
+        padding-top  : 30px;
+        border-radius: 0 0 32px 32px;
+        box-shadow   : 4px 0 16px rgba(0, 0, 0, 0.2);
+        height       : 85px;
+        width        : 100%;
+        background   : rgba(0, 0, 0, 0.2);
       }
 
       .progressCont {
@@ -156,6 +118,49 @@
               background-color: rgba(239, 239, 244, 0.8);
               width           : 100%;
             }
+          }
+        }
+      }
+
+      .title {
+        position: absolute;
+        top     : 35px;
+        z-index : 10;
+        color   : var(--dark-gray);
+      }
+
+      .slide {
+        position       : relative;
+        display        : flex !important;
+        justify-content: center !important;
+        align-items    : center !important;
+        text-align     : center;
+        font-size      : 18px;
+        background     : var(--beige);
+        width          : 100% !important;
+        height         : 600px !important;
+        overflow       : hidden;
+
+        .image {
+          height         : 600px;
+          top            : 0;
+          position       : absolute;
+          background-size: cover;
+        }
+
+        .button {
+          bottom       : 30px;
+          position     : absolute;
+          width        : 80%;
+          padding      : 10px;
+          border-radius: 15px;
+          background   : rgba(0, 0, 0, 0.3);
+          color        : var(--white);
+
+          &:hover {
+            color     : var(--white);
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(15px);
           }
         }
       }
