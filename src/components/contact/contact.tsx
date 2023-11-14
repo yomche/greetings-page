@@ -5,12 +5,16 @@ import { useContact } from "./useContact";
 import classNames from "classnames";
 import styles from "./contact.module.scss";
 
-export const Contact = () => {
+export const Contact = ({
+  sectionRef,
+}: {
+  sectionRef: React.RefObject<HTMLDivElement>;
+}) => {
   const { contactForm, status, submitForm } = useContact();
 
   return (
-    <div className={classNames("main", styles.container)} id="contact">
-      <h1>Contact Me</h1>
+    <div ref={sectionRef} className={classNames("main", styles.container)}>
+      <h1 id="contact">Contact Me</h1>
       <div className={styles.wrapper}>
         <div className={styles.options}>
           <Banner

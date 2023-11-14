@@ -4,9 +4,13 @@ import { FaGithub } from "react-icons/fa";
 import { LinkButton } from "@ui";
 import styles from "./header.module.scss";
 
-export const Header = () => {
+export const Header = ({
+  sectionRef,
+}: {
+  sectionRef: React.RefObject<HTMLDivElement>;
+}) => {
   return (
-    <header className={"main"}>
+    <header id={"home"} className={"main"} ref={sectionRef}>
       <div className={styles.container}>
         <h5>Hello I'm</h5>
         <h1>Ekaterina</h1>

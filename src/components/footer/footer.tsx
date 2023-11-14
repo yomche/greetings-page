@@ -1,9 +1,13 @@
 import { navLinks } from "@constants";
 import styles from "./footer.module.scss";
 
-export const Footer = () => {
+export const Footer = ({
+  sectionRef,
+}: {
+  sectionRef: React.RefObject<HTMLDivElement>;
+}) => {
   return (
-    <div className={styles.footer}>
+    <div className={styles.footer} ref={sectionRef}>
       <footer className="main">
         <div className={styles.links}>
           {navLinks.map((link, idx) => (

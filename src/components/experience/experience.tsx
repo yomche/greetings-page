@@ -7,7 +7,11 @@ import classNames from "classnames";
 import styles from "./experience.module.scss";
 import "swiper/css";
 
-export const Experience = () => {
+export const Experience = ({
+  sectionRef,
+}: {
+  sectionRef: React.RefObject<HTMLDivElement>;
+}) => {
   const [sliderId, setSliderId] = useState(1);
   const progressBar = useRef<HTMLDivElement>(null);
   const onAutoplayTimeLeft = (
@@ -20,12 +24,11 @@ export const Experience = () => {
   };
 
   return (
-    <div id="experience" className={classNames("main", styles.container)}>
-      <h1>My Experience</h1>
+    <div ref={sectionRef} className={classNames("main", styles.container)}>
+      <h1 id="experience">My Experience</h1>
       <div className={styles.wrapper}>
         <div className={styles.experience}>
           <h3>Frontend Development</h3>
-
           <div className={styles.content}>
             <article className={styles.details}>
               <BsPatchCheckFill className={styles.icon} />

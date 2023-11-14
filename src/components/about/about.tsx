@@ -5,10 +5,14 @@ import { Banner } from "@ui";
 import classNames from "classnames";
 import styles from "./about.module.scss";
 
-export const About = () => {
+export const About = ({
+  sectionRef,
+}: {
+  sectionRef: React.RefObject<HTMLDivElement>;
+}) => {
   return (
-    <div id="about" className={classNames("main", styles.container)}>
-      <h1>About Me</h1>
+    <div ref={sectionRef} className={classNames("main", styles.container)}>
+      <h1 id="about">About Me</h1>
       <div className={styles.wrapper}>
         <div className={styles.frame}>
           <div className={styles.photo}>
