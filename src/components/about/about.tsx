@@ -38,11 +38,16 @@ export const About = ({
             />
           </div>
           <div className={styles.description}>
-            Frontend developer with 1.5+ years of experience. Successfully
-            completed an internship at EPAM Systems Training Center followed by
-            employment with the company.
-            <br />I specialize in developing React applications using Redux,
-            TypeScript, Next.js, etc.
+            <p>
+              Frontend developer with 1.5+ years of experience.
+              <br />
+              Successfully completed an internship at EPAM Systems followed by
+              employment with the company. Currently I work at L-tech.
+            </p>
+            <p>
+              I specialize in developing React / Next.js applications using
+              TypeScript.
+            </p>
           </div>
         </div>
       </div>
