@@ -23,7 +23,7 @@ export const About = ({
           <div className={styles.banners}>
             <Banner
               title={"Experience"}
-              description={"1,5+ years"}
+              description={"2 years"}
               icon={<FaAward />}
             />
             <Banner
@@ -39,7 +39,7 @@ export const About = ({
           </div>
           <div className={styles.description}>
             <p>
-              Frontend developer with 1.5+ years of experience.
+              Frontend developer with 2 years of experience.
               <br />
               Successfully completed an internship at EPAM Systems followed by
               employment with the company. Currently I work at L-tech.
