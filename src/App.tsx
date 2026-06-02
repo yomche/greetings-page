@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Scrollspy } from "@makotot/ghostui";
 import {
   About,
@@ -9,7 +9,12 @@ import {
   Navigation,
 } from "@components";
 
+import "./localization/i18n";
+import i18n from "./localization";
+
 function App() {
+  const localization = navigator.language.split("-")[0];
+
   const sectionRefs = [
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
@@ -17,6 +22,10 @@ function App() {
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
   ];
+
+  useEffect(() => {
+    i18n.changeLanguage(localization);
+  }, [localization]);
 
   return (
     <Scrollspy sectionRefs={sectionRefs}>

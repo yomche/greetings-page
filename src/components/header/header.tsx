@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { CV, profilePhoto } from "@assets";
 import { BsLinkedin } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
@@ -9,10 +10,12 @@ export const Header = ({
 }: {
   sectionRef: React.RefObject<HTMLDivElement>;
 }) => {
+  const { t } = useTranslation();
+
   return (
-    <header id={"home"} className={"main"} ref={sectionRef}>
+    <header id="home" className="main" ref={sectionRef}>
       <div className={styles.container}>
-        <h5>Hello I'm</h5>
+        <h5>{t("header.hello")}</h5>
         <h1>Ekaterina</h1>
         <h5>Frontend Developer</h5>
         <div className={styles.contact}>
