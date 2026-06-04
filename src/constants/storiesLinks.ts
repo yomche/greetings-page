@@ -7,7 +7,20 @@ import {
   project6,
 } from "@assets";
 
-export const stories = [
+/** Проект для слайдера демо-работ. */
+type Story = {
+  /** Название проекта в карточке слайдера. */
+  name: string;
+  /** Порядковый номер слайда. */
+  id: number;
+  /** Публичная ссылка на демо. */
+  link: string;
+  /** Превью проекта. */
+  image: string;
+};
+
+/** Список проектов, отображаемых в секции опыта. */
+export const stories: Story[] = [
   {
     name: "GitHub User Search App",
     id: 1,

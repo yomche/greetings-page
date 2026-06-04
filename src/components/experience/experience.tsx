@@ -1,19 +1,49 @@
+import type { RefObject } from "react";
 import { useRef, useState } from "react";
-import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
-import { BsPatchCheckFill } from "react-icons/bs";
+
+import { AiOutlineBranches } from "react-icons/ai";
 import { Autoplay } from "swiper/modules";
-import { stories } from "@constants";
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+import { useTranslation } from "react-i18next";
 import classNames from "classnames";
+
+import { stories } from "@constants";
+
 import styles from "./experience.module.scss";
 import "swiper/css";
 
+type WorkExperience = {
+  /** Название компании. */
+  company: string;
+  /** Краткое описание компании или продукта. */
+  summary: string;
+  /** Город и размер компании. */
+  location: string;
+  /** Роль в компании. */
+  role: string;
+  /** Период работы. */
+  period: string;
+  /** Сжатый список ключевых задач и результатов. */
+  items: string[];
+  /** Основные технологии и инструменты. */
+  stack: string[];
+};
+
+/** Секция опыта с деревом рабочих мест и слайдером демо-проектов. */
 export const Experience = ({
   sectionRef,
 }: {
-  sectionRef: React.RefObject<HTMLDivElement>;
+  /** Ref секции для Scrollspy и якорной навигации. */
+  sectionRef: RefObject<HTMLDivElement>;
 }) => {
+  const { t } = useTranslation();
+  const experiences = t("experience.jobs", {
+    returnObjects: true,
+  }) as WorkExperience[];
   const [sliderId, setSliderId] = useState(1);
   const progressBar = useRef<HTMLDivElement>(null);
+
+  /** Обновляет CSS-переменную прогресса активного autoplay-слайда. */
   const onAutoplayTimeLeft = (
     swiper: SwiperClass,
     timeLeft: number,
@@ -25,55 +55,46 @@ export const Experience = ({
 
   return (
     <div ref={sectionRef} className={classNames("main", styles.container)}>
-      <h1 id="experience">My Experience</h1>
+      <h1 id="experience">{t("experience.title")}</h1>
       <div className={styles.wrapper}>
-        <div className={styles.experience}>
-          <h3>Frontend Development</h3>
-          <div className={styles.content}>
-            <article className={styles.details}>
-              <BsPatchCheckFill className={styles.icon} />
-              <div className={styles.detail}>
-                <h4>HTML</h4>
-                <small>Intermediate</small>
-              </div>
-            </article>
-            <article className={styles.details}>
-              <BsPatchCheckFill className={styles.icon} />
-              <div className={styles.detail}>
-                <h4>CSS</h4>
-                <small>Intermediate</small>
-              </div>
-            </article>
-            <article className={styles.details}>
-              <BsPatchCheckFill className={styles.icon} />
-              <div className={styles.detail}>
-                <h4>JavaScript</h4>
-                <small>Intermediate</small>
-              </div>
-            </article>
-            <article className={styles.details}>
-              <BsPatchCheckFill className={styles.icon} />
-              <div className={styles.detail}>
-                <h4>React</h4>
-                <small>Intermediate</small>
-              </div>
-            </article>
-            <article className={styles.details}>
-              <BsPatchCheckFill className={styles.icon} />
-              <div className={styles.detail}>
-                <h4>TypeScript</h4>
-                <small>Intermediate</small>
-              </div>
-            </article>
-            <article className={styles.details}>
-              <BsPatchCheckFill className={styles.icon} />
-              <div className={styles.detail}>
-                <h4>Next.js</h4>
-                <small>Intermediate</small>
-              </div>
-            </article>
+        <section className={styles.experience} aria-labelledby="experience-tree-title">
+          <div className={styles.treeHeader}>
+            <div className={styles.treeIcon}>
+              <AiOutlineBranches />
+            </div>
+            <div>
+              <small>{t("experience.treeSubtitle")}</small>
+              <h2 id="experience-tree-title">{t("experience.treeTitle")}</h2>
+            </div>
           </div>
-        </div>
+          <div className={styles.branches}>
+            {experiences.map((job) => (
+              <article className={styles.branch} key={job.company}>
+                <div className={styles.branchHeader}>
+                  <div>
+                    <h3>{job.company}</h3>
+                    <p>{job.summary}</p>
+                  </div>
+                  <span>{job.period}</span>
+                </div>
+                <div className={styles.meta}>
+                  <strong>{job.role}</strong>
+                  <small>{job.location}</small>
+                </div>
+                <ul>
+                  {job.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+                <div className={styles.stack}>
+                  {job.stack.map((technology) => (
+                    <span key={technology}>{technology}</span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
         <div className={styles.swiper}>
           <Swiper
             slidesPerView={"auto"}
@@ -102,7 +123,7 @@ export const Experience = ({
                   <img src={story.image} alt={story.name} />
                 </div>
                 <a className={styles.button} href={story.link}>
-                  Open demo
+                  {t("experience.openDemo")}
                 </a>
               </SwiperSlide>
             ))}

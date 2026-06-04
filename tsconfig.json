@@ -21,7 +21,8 @@
       "@components": ["components"],
       "@assets": ["assets"],
       "@ui": ["ui"],
-      "@constants": ["constants"]
+      "@constants": ["constants"],
+      "@types": ["types"]
     },
     "types": ["node"]
   },

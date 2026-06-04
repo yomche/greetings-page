@@ -5,16 +5,27 @@ import {
   AiOutlineBook,
 } from "react-icons/ai";
 
-export const navLinks = [
-  { name: "Home", path: "#home", icon: <AiOutlineHome /> },
-  { name: "About", path: "#about", icon: <AiOutlineUser /> },
+/** Ссылка нижней навигации и футера с ключом перевода подписи. */
+type NavLink = {
+  /** Ключ локализованного названия пункта. */
+  labelKey: string;
+  /** Якорь секции на странице. */
+  path: string;
+  /** Иконка для компактной навигации. */
+  icon: JSX.Element;
+};
+
+/** Основные якоря одностраничного сайта. */
+export const navLinks: NavLink[] = [
+  { labelKey: "nav.home", path: "#home", icon: <AiOutlineHome /> },
+  { labelKey: "nav.about", path: "#about", icon: <AiOutlineUser /> },
   {
-    name: "Experience",
+    labelKey: "nav.experience",
     path: "#experience",
     icon: <AiOutlineBook />,
   },
   {
-    name: "Contact",
+    labelKey: "nav.contact",
     path: "#contact",
     icon: <AiOutlineMessage />,
   },

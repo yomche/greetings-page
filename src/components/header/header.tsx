@@ -1,14 +1,19 @@
+import type { RefObject } from "react";
+
 import { useTranslation } from "react-i18next";
+
 import { CV, profilePhoto } from "@assets";
-import { BsLinkedin } from "react-icons/bs";
-import { FaGithub } from "react-icons/fa";
-import { LinkButton } from "@ui";
+import { ButtonTypesEnum } from "@types";
+import { LinkButton, SocialLinks } from "@ui";
+
 import styles from "./header.module.scss";
 
+/** Главная hero-секция с именем, специализацией, фото и быстрыми действиями. */
 export const Header = ({
   sectionRef,
 }: {
-  sectionRef: React.RefObject<HTMLDivElement>;
+  /** Ref секции для Scrollspy и якорной навигации. */
+  sectionRef: RefObject<HTMLDivElement>;
 }) => {
   const { t } = useTranslation();
 
@@ -16,35 +21,26 @@ export const Header = ({
     <header id="home" className="main" ref={sectionRef}>
       <div className={styles.container}>
         <h5>{t("header.hello")}</h5>
-        <h1>Ekaterina</h1>
-        <h5>Frontend Developer</h5>
+        <h1>{t("header.name")}</h1>
+        <h5>{t("header.speciality")}</h5>
+
         <div className={styles.contact}>
           <LinkButton
             link={CV}
-            download
-            type={"secondary"}
-            title={"Download CV"}
+            isDownload
+            type={ButtonTypesEnum.SECONDARY}
+            title={t("header.downloadCV")}
           />
+
           <div className={styles.photo}>
-            <img src={profilePhoto} alt="Ekaterina Dorozhkina" />
+            <img src={profilePhoto} alt={t("header.name")} />
           </div>
-          <LinkButton link={"#contact"} title={"Contact me"} />
+
+          <LinkButton link="#contact" title={t("header.contactMe")} />
         </div>
+
         <SocialLinks />
       </div>
     </header>
-  );
-};
-
-const SocialLinks = () => {
-  return (
-    <div className={styles.socials}>
-      <a href="https://www.linkedin.com/in/yomche" target="_blank">
-        <BsLinkedin />
-      </a>
-      <a href="https://github.com/yomche" target="_blank">
-        <FaGithub />
-      </a>
-    </div>
   );
 };

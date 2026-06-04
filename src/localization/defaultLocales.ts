@@ -1,14 +1,281 @@
 import type { Resource } from "i18next";
 
+/** Резервные переводы интерфейса для поддерживаемых языков сайта. */
 export const defaultLocales: Resource = {
   ru: {
     translation: {
       "header.hello": "Привет! Я",
+      "header.name": "Екатерина",
+      "header.speciality": "Frontend-разработчик",
+      "header.downloadCV": "Скачать резюме",
+      "header.contactMe": "Связаться со мной",
+
+      "nav.home": "Главная",
+      "nav.about": "О себе",
+      "nav.experience": "Опыт",
+      "nav.contact": "Контакты",
+
+      "about.title": "О себе",
+      "about.photoAlt": "Екатерина Дорожкина",
+      "about.lead":
+        "Frontend-разработчик, специализирующийся на веб-приложениях на React и Next.js с использованием TypeScript.",
+      "about.paragraphs": [
+        "Создаю кастомные UI-компоненты и работаю с UI-библиотеками: Ant Design, MUI, AG Grid, Kendo React, React Flow, Swiper и другими. Для стилизации интерфейсов использую SASS/SCSS.",
+        "В работе применяю Redux для управления состоянием, а также имею опыт с Recoil и Zustand.",
+        "Для взаимодействия с API и управления серверными данными чаще использую Axios, также работала с Ky и React Query.",
+      ],
+      "about.metrics": [
+        {
+          title: "Опыт",
+          description: "4+ года",
+        },
+        {
+          title: "Фокус",
+          description: "React / Next.js",
+        },
+        {
+          title: "База",
+          description: "TypeScript + UI",
+        },
+      ],
+
+      "experience.title": "Опыт",
+      "experience.treeTitle": "Рабочий путь",
+      "experience.treeSubtitle": "Дерево опыта",
+      "experience.openDemo": "Открыть демо",
+      "experience.jobs": [
+        {
+          company: "Idea Platform",
+          summary: "Системы автоматизации бизнес-процессов",
+          location: "Москва • 10-100 сотрудников",
+          role: "Ведущий разработчик",
+          period: "Май 2024 — настоящее время",
+          items: [
+            "Разработка сложных интерфейсов на React и TypeScript с Redux, Redux Saga, React Router и SCSS.",
+            "Кастомные UI-компоненты и переиспользуемые frontend-решения для внутренних модулей платформы.",
+            "Low-code «Конструктор запросов» для анализа данных и формирования SQL-запросов без ручного SQL.",
+            "Миграция legacy-интерфейсов с jQuery Kendo UI на KendoReact и React-компоненты.",
+            "Оптимизация загрузки и кеширования метаданных: сетевой трафик снижен примерно с 10 МБ/с до 3,3 МБ/с.",
+            "Локализация на i18next/react-i18next, code review, декомпозиция задач, JSDoc и участие в найме frontend-кандидатов.",
+          ],
+          stack: [
+            "React",
+            "Redux",
+            "Redux Saga",
+            "TypeScript",
+            "SCSS",
+            "KendoReact",
+            "React Flow",
+            "i18next",
+          ],
+        },
+        {
+          company: "Л-ТЕХ",
+          summary: "IT-решения для бизнеса",
+          location: "Тверь • 10-100 сотрудников",
+          role: "Frontend-разработчик",
+          period: "Апрель 2023 — февраль 2024",
+          items: [
+            "Разработка SPA-приложений с адаптивной версткой для мобильных устройств.",
+            "Участие в разработке SSR-приложения на Next.js и Tailwind CSS с нуля.",
+            "PWA-приложение для банковского продукта как альтернатива мобильному приложению.",
+            "Кастомные UI-компоненты, рефакторинг legacy-кода и миграция с jQuery на native JS/ES6+.",
+            "Декомпозиция релизных требований, оценка задач, коммуникация с QA и backend-командами, code review.",
+          ],
+          stack: [
+            "React",
+            "TypeScript",
+            "Next.js",
+            "Recoil",
+            "Tailwind CSS",
+            "Sass",
+            "PWA",
+            "jQuery",
+          ],
+        },
+        {
+          company: "EPAM",
+          summary: "Software engineering и digital platforms",
+          location: "Тверь • 5000+ сотрудников",
+          role: "Frontend-разработчик",
+          period: "Июнь 2021 — июль 2022",
+          items: [
+            "Работа на международном проекте в распределенной команде по SAFe и Rally / CA Agile Central.",
+            "Участие в разработке SSR-приложения на Next.js с нуля.",
+            "UI-компоненты на React, TypeScript, Material UI, Ant Design и AG Grid.",
+            "Покрытие компонентов тестами на React Testing Library и Jest.",
+            "Рефакторинг legacy JavaScript на ES6+, code review, оценки, Knowledge Transfer и DEMO-сессии.",
+          ],
+          stack: [
+            "React",
+            "TypeScript",
+            "Next.js",
+            "Material UI",
+            "Ant Design",
+            "AG Grid",
+            "Jest",
+            "RTL",
+          ],
+        },
+      ],
+
+      "contact.title": "Контакты",
+      "contact.introTitle": "Буду рада обсудить ваш проект",
+      "contact.introDescription":
+        "Свяжитесь со мной через почту или Telegram — либо заполните форму, и я отвечу вам напрямую.",
+      "contact.cooperation":
+        "Открыта к сотрудничеству, продуктовым задачам и интерфейсам, которые хочется делать аккуратно.",
+      "contact.emailAddress": "katerina.smirnova98@yandex.ru",
+      "contact.telegramHandle": "@katerina_dorozhkina",
+      "contact.linkMessage": "Написать",
+      "contact.fullName": "Ваше имя",
+      "contact.email": "Ваш email",
+      "contact.message": "Ваше сообщение",
+      "contact.send": "Отправить",
+      "contact.status.sending": "Отправляю...",
+      "contact.status.sent": "Сообщение отправлено!",
+      "contact.status.error": "Не удалось отправить сообщение.",
+
+      "footer.copyright": "yomche © 2023",
+      "common.externalLink": "Открывается в новой вкладке",
     },
   },
   en: {
     translation: {
       "header.hello": "Hello! I'm",
+      "header.name": "Ekaterina",
+      "header.speciality": "Frontend Developer",
+      "header.downloadCV": "Download CV",
+      "header.contactMe": "Contact me",
+
+      "nav.home": "Home",
+      "nav.about": "About",
+      "nav.experience": "Experience",
+      "nav.contact": "Contact",
+
+      "about.title": "About Me",
+      "about.photoAlt": "Ekaterina Dorozhkina",
+      "about.lead":
+        "Frontend developer focused on React and Next.js web applications built with TypeScript.",
+      "about.paragraphs": [
+        "I create custom UI components and work with UI libraries such as Ant Design, MUI, AG Grid, Kendo React, React Flow, Swiper, and others. I use SASS/SCSS for interface styling.",
+        "I use Redux for state management and also have experience with Recoil and Zustand.",
+        "For API communication and server data I mostly use Axios, with additional experience in Ky and React Query.",
+      ],
+      "about.metrics": [
+        {
+          title: "Experience",
+          description: "4+ years",
+        },
+        {
+          title: "Focus",
+          description: "React / Next.js",
+        },
+        {
+          title: "Core",
+          description: "TypeScript + UI",
+        },
+      ],
+
+      "experience.title": "My Experience",
+      "experience.treeTitle": "Work Path",
+      "experience.treeSubtitle": "Experience tree",
+      "experience.openDemo": "Open demo",
+      "experience.jobs": [
+        {
+          company: "Idea Platform",
+          summary: "Business process automation systems",
+          location: "Moscow • 10-100 employees",
+          role: "Lead Developer",
+          period: "May 2024 — present",
+          items: [
+            "Complex React and TypeScript interfaces with Redux, Redux Saga, React Router, and SCSS.",
+            "Custom UI components and reusable frontend solutions for internal platform modules.",
+            "Low-code Query Builder for data analysis and SQL generation without writing SQL manually.",
+            "Migration of legacy interfaces from jQuery Kendo UI to KendoReact and React components.",
+            "Metadata loading and caching optimization: network traffic reduced from about 10 MB/s to 3.3 MB/s.",
+            "i18next/react-i18next localization, code review, task decomposition, JSDoc, and frontend candidate screening.",
+          ],
+          stack: [
+            "React",
+            "Redux",
+            "Redux Saga",
+            "TypeScript",
+            "SCSS",
+            "KendoReact",
+            "React Flow",
+            "i18next",
+          ],
+        },
+        {
+          company: "L-TECH",
+          summary: "IT solutions for business",
+          location: "Tver • 10-100 employees",
+          role: "Frontend Developer",
+          period: "April 2023 — February 2024",
+          items: [
+            "SPA applications with responsive mobile layouts.",
+            "SSR application built from scratch with Next.js and Tailwind CSS.",
+            "PWA for a banking product as an alternative to a mobile app.",
+            "Custom UI components, legacy refactoring, and migration from jQuery to native JS/ES6+.",
+            "Release requirement decomposition, estimates, QA/backend communication, and code review.",
+          ],
+          stack: [
+            "React",
+            "TypeScript",
+            "Next.js",
+            "Recoil",
+            "Tailwind CSS",
+            "Sass",
+            "PWA",
+            "jQuery",
+          ],
+        },
+        {
+          company: "EPAM",
+          summary: "Software engineering and digital platforms",
+          location: "Tver • 5000+ employees",
+          role: "Frontend Developer",
+          period: "June 2021 — July 2022",
+          items: [
+            "International distributed project using SAFe and Rally / CA Agile Central.",
+            "SSR application built from scratch with Next.js.",
+            "UI components with React, TypeScript, Material UI, Ant Design, and AG Grid.",
+            "Component tests with React Testing Library and Jest.",
+            "Legacy JavaScript refactoring to ES6+, code review, estimates, Knowledge Transfer, and DEMO sessions.",
+          ],
+          stack: [
+            "React",
+            "TypeScript",
+            "Next.js",
+            "Material UI",
+            "Ant Design",
+            "AG Grid",
+            "Jest",
+            "RTL",
+          ],
+        },
+      ],
+
+      "contact.title": "Contact Me",
+      "contact.introTitle": "I would be happy to discuss your project",
+      "contact.introDescription":
+        "Reach me by email or Telegram, or fill out the form and I will get back to you directly.",
+      "contact.cooperation":
+        "Open to collaboration, product work, and interfaces that deserve thoughtful implementation.",
+      "contact.emailAddress": "katerina.smirnova98@yandex.ru",
+      "contact.telegramHandle": "@katerina_dorozhkina",
+      "contact.linkMessage": "Send message",
+      "contact.fullName": "Your Full Name",
+      "contact.email": "Your Email",
+      "contact.message": "Your Message",
+      "contact.send": "Send Message",
+      "contact.status.sending": "Sending...",
+      "contact.status.sent": "Message sent!",
+      "contact.status.error": "Message failed to send.",
+
+      "footer.copyright": "yomche © 2023",
+      "common.externalLink": "Opens in a new tab",
     },
   },
 };

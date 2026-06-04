@@ -1,29 +1,38 @@
 import classNames from "classnames";
+
+import { ButtonTypesEnum } from "@types";
+
 import styles from "./button.module.scss";
 
-interface LinkButtonProps {
+type Props = {
+  /** Текст кнопки-ссылки. */
   title: string;
+  /** Адрес перехода или файл для скачивания. */
   link?: string;
-  download?: boolean;
+  /** Нужно ли скачать файл вместо обычного перехода. */
+  isDownload?: boolean;
+  /** Дополнительное действие по клику. */
   action?: () => void;
-  type?: "primary" | "secondary";
-}
+  /** Визуальный тип кнопки. */
+  type?: ButtonTypesEnum;
+};
 
+/** Стилизованная ссылка, используемая как кнопка действия. */
 export const LinkButton = ({
   title,
   link,
   action,
-  download = false,
-  type = "primary",
-}: LinkButtonProps) => {
+  isDownload = false,
+  type = ButtonTypesEnum.PRIMARY,
+}: Props) => {
   return (
     <a
       href={link}
-      download={download}
-      onClick={() => action?.()}
+      download={isDownload}
+      onClick={action}
       className={classNames(
         styles.button,
-        type === "primary" && styles.primary,
+        type === ButtonTypesEnum.PRIMARY && styles.primary
       )}
     >
       {title}

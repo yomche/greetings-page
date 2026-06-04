@@ -12,6 +12,7 @@ import {
 import "./localization/i18n";
 import i18n from "./localization";
 
+/** Корневой компонент одностраничной визитки с локализацией и scrollspy. */
 function App() {
   const localization = navigator.language.split("-")[0];
 

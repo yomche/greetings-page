@@ -1,69 +1,209 @@
 .container {
   text-align: center;
-  padding   : 80px 0;
-  width     : 60%;
+  padding: 80px 0;
+  width: min(82%, 1120px);
+
+  h1 {
+    margin-bottom: 36px;
+  }
 
   .wrapper {
-    display              : grid;
-    justify-content      : center;
-    grid-template-columns: minmax(150px, 20vw) minmax(250px, 35vw);
-    gap                  : 50px;
+    display: grid;
+    grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.1fr);
+    gap: 34px;
+    align-items: stretch;
 
-    .options {
-      display       : flex;
+    .connect {
+      display: flex;
       flex-direction: column;
-      gap           : 20px;
+      justify-content: space-between;
+      gap: 28px;
+      text-align: left;
+      padding: 32px;
+      border-radius: 28px;
+      background: var(--dark-gray);
+      color: var(--beige);
+
+      .intro {
+        h2 {
+          color: var(--white);
+          font-size: 32px;
+          line-height: 1.18;
+        }
+
+        p {
+          color: var(--deep-beige);
+          font-size: 18px;
+          margin-top: 14px;
+        }
+      }
+
+      .options {
+        display: grid;
+        gap: 14px;
+
+        .option {
+          display: grid;
+          grid-template-columns: 46px 1fr auto;
+          gap: 14px;
+          align-items: center;
+          min-height: 82px;
+          padding: 16px;
+          border-radius: 18px;
+          color: var(--beige);
+          background: rgba(244, 230, 224, 0.08);
+          border: 1px solid rgba(244, 230, 224, 0.16);
+          transition: all 400ms ease;
+
+          &:hover {
+            color: var(--white);
+            background: rgba(244, 230, 224, 0.14);
+            border-color: rgba(244, 230, 224, 0.34);
+            transform: translateY(-2px);
+          }
+
+          .optionIcon {
+            display: grid;
+            place-items: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            color: var(--dark-gray);
+            background: var(--beige);
+            font-size: 22px;
+          }
+
+          .optionContent {
+            display: grid;
+            gap: 2px;
+            min-width: 0;
+
+            small {
+              color: var(--deep-beige);
+              font-size: 14px;
+            }
+
+            strong {
+              overflow: hidden;
+              color: var(--white);
+              font-size: 17px;
+              line-height: 1.25;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+
+          .optionAction {
+            color: var(--deep-beige);
+            font-size: 15px;
+          }
+        }
+      }
     }
 
     .formWrapper {
-      display       : flex;
+      display: flex;
       flex-direction: column;
-      gap           : 10px;
-      position      : relative;
+      gap: 10px;
+      position: relative;
+      padding: 32px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.32);
+      border: 1px solid rgba(182, 168, 156, 0.42);
 
       .form {
-        display       : flex;
+        display: flex;
         flex-direction: column;
-        gap           : 20px;
+        gap: 18px;
 
         input,
         textarea {
-          font-size    : 18px;
-          font-family  : "Crassula";
-          width        : 100%;
-          padding      : 24px;
-          border-radius: 8px;
-          background   : transparent;
-          border       : 2px solid var(--deep-beige);
-          resize       : none;
-          color        : var(--color-white);
+          font-size: 18px;
+          font-family: "Crassula";
+          width: 100%;
+          padding: 20px 22px;
+          border-radius: 14px;
+          background: rgba(244, 230, 224, 0.55);
+          border: 2px solid rgba(182, 168, 156, 0.72);
+          resize: none;
+          color: var(--dark-gray);
+          transition: all 300ms ease;
+
+          &:focus {
+            background: var(--beige);
+            border-color: var(--dark-gray);
+          }
+        }
+
+        textarea {
+          min-height: 190px;
         }
 
         .button {
-          display      : inline-block;
-          width        : max-content;
-          color        : var(--dark-gray);
-          background   : var(--beige);
-          padding      : 12px 20px;
-          border-radius: 10px;
-          cursor       : pointer;
-          border       : 1px solid var(--dark-gray);
-          transition   : all 400ms ease;
-          font-size    : 16px;
-          font-family  : "Crassula";
+          display: inline-block;
+          width: max-content;
+          color: var(--beige);
+          background: var(--dark-gray);
+          padding: 12px 22px;
+          border-radius: 12px;
+          cursor: pointer;
+          border: 1px solid var(--dark-gray);
+          transition: all 400ms ease;
+          font-size: 16px;
+          font-family: "Crassula";
 
           &:hover {
-            color       : var(--beige);
-            background  : var(--deep-beige);
+            color: var(--dark-gray);
+            background: var(--deep-beige);
             border-color: var(--deep-beige);
           }
         }
       }
     }
-    @media screen and (max-width: 600px) {
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: var(--lg-width);
+
+    .wrapper {
       grid-template-columns: 1fr;
-      gap                  : 32px;
-      align-items          : center;
+
+      .connect {
+        min-height: auto;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    width: var(--sm-width);
+
+    .wrapper {
+      gap: 22px;
+
+      .connect,
+      .formWrapper {
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .connect {
+        .intro h2 {
+          font-size: 26px;
+        }
+
+        .options .option {
+          grid-template-columns: 42px 1fr;
+
+          .optionIcon {
+            width: 42px;
+            height: 42px;
+          }
+
+          .optionAction {
+            grid-column: 2;
+          }
+        }
+      }
     }
   }
 }

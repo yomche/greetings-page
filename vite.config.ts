@@ -13,6 +13,7 @@ export default defineConfig({
       "@assets": path.resolve(__dirname, "./src/assets"),
       "@ui": path.resolve(__dirname, "./src/ui"),
       "@constants": path.resolve(__dirname, "./src/constants"),
+      "@types": path.resolve(__dirname, "./src/types"),
     },
   },
   envDir: "./env",
