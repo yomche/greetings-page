@@ -1,35 +1,84 @@
 .banner {
-  color        : var(--white);
-  background   : var(--deep-beige);
-  text-align   : center;
-  padding      : 20px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  height: 164px;
+  padding: 20px;
+  overflow: hidden;
+  color: var(--dark-gray);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(182, 168, 156, 0.42);
   border-radius: 20px;
-  border       : 1px solid transparent;
-  transition   : all 400ms ease;
-  height       : 164px;
+  box-shadow: 0 14px 34px rgba(79, 77, 77, 0.05);
+  transition:
+    transform 400ms ease,
+    box-shadow 400ms ease,
+    border-color 400ms ease,
+    background 400ms ease;
 
   &:hover {
-    background  : var(--beige);
-    border-color: var(--deep-beige);
-    color       : var(--deep-beige);
+    background: rgba(244, 230, 224, 0.72);
+    border-color: rgba(182, 168, 156, 0.78);
+    box-shadow: 0 20px 44px rgba(79, 77, 77, 0.1);
+    transform: translateY(-6px);
+  }
+
+  h4 {
+    color: var(--deep-gray);
+    transition: color 350ms ease;
   }
 
   h5 {
-    overflow     : hidden;
-    white-space  : nowrap;
+    overflow: hidden;
+    max-width: 100%;
+    color: var(--black);
+    white-space: nowrap;
     text-overflow: ellipsis;
+    transition: transform 350ms ease;
+  }
+
+  &:hover h4 {
+    color: var(--middle-gray);
+  }
+
+  &:hover h5 {
+    transform: translateY(-1px);
   }
 
   .icon {
-    font-size: 24px;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    color: var(--dark-gray);
+    background: rgba(244, 230, 224, 0.72);
+    border: 1px solid rgba(182, 168, 156, 0.42);
+    border-radius: 50%;
+    font-size: 22px;
+    transition:
+      transform 400ms ease,
+      background 400ms ease,
+      border-color 400ms ease;
+  }
+
+  &:hover .icon {
+    background: var(--beige);
+    border-color: var(--deep-beige);
+    transform: rotate(-8deg) scale(1.08);
   }
 
   a {
-    color      : var(--dark-gray);
+    color: var(--dark-gray);
     font-weight: 700;
+    transition:
+      color 300ms ease,
+      transform 300ms ease;
 
     &:hover {
-      color: var(--deep-beige);
+      color: var(--middle-gray);
+      transform: translateY(-1px);
     }
   }
 }
