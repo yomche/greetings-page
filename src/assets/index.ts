@@ -1,5 +1,5 @@
 import CV from "./CV_Ekaterina_Dorozhkina_React_Developer.pdf";
-import profilePhoto from "./photo1.png";
+import profilePhoto from "./photo2.png";
 import profileFrame from "./photo2.png";
 import project1 from "./pro1.png";
 import project2 from "./pro2.png";

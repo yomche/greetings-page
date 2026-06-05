@@ -31,11 +31,7 @@ export const defaultLocales: Resource = {
         },
         {
           title: "Фокус",
-          description: "React / Next.js",
-        },
-        {
-          title: "База",
-          description: "TypeScript + UI",
+          description: "React / Next.js + TypeScript",
         },
       ],
 
@@ -169,11 +165,7 @@ export const defaultLocales: Resource = {
         },
         {
           title: "Focus",
-          description: "React / Next.js",
-        },
-        {
-          title: "Core",
-          description: "TypeScript + UI",
+          description: "React / Next.js + TypeScript",
         },
       ],
 
