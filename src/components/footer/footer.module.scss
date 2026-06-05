@@ -1,18 +1,17 @@
 .footer {
-  color     : var(--beige);
+  color: var(--beige);
   background: var(--dark-gray);
-  padding   : 100px 0;
-  font-size : 17px;
-  height    : 400px;
+  padding: 100px 0;
+  font-size: 17px;
 
   footer {
-    display       : flex;
+    display: flex;
     flex-direction: column;
-    gap           : 16px;
+    gap: 16px;
 
     .links {
-      display        : flex;
-      gap            : 25px;
+      display: flex;
+      gap: 25px;
       justify-content: center;
 
       a {
@@ -23,14 +22,14 @@
         }
       }
       @media screen and (max-width: 600px) {
-        align-items   : center;
+        align-items: center;
         flex-direction: column;
-        gap           : 10px;
+        gap: 10px;
       }
     }
 
     .copyright {
-      display        : flex;
+      display: flex;
       justify-content: center;
     }
   }

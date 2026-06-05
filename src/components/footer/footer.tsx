@@ -2,7 +2,7 @@ import type { RefObject } from "react";
 
 import { useTranslation } from "react-i18next";
 
-import { navLinks } from "@constants";
+import { NAV_LINKS } from "@constants";
 
 import styles from "./footer.module.scss";
 
@@ -17,9 +17,9 @@ export const Footer = ({
 
   return (
     <div className={styles.footer} ref={sectionRef}>
-      <footer className="main">
+      <footer>
         <div className={styles.links}>
-          {navLinks.map((link) => (
+          {NAV_LINKS.map((link) => (
             <a href={link.path} key={link.path}>
               {t(link.labelKey)}
             </a>

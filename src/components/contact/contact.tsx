@@ -1,33 +1,18 @@
-import { MdOutlineEmail } from "react-icons/md";
-import { BsTelegram } from "react-icons/bs";
+import { RefObject } from "react";
+
 import { useTranslation } from "react-i18next";
 import { Status } from "@ui";
 import { useContact } from "./useContact";
 import classNames from "classnames";
 import styles from "./contact.module.scss";
-
-const contactOptions = [
-  {
-    title: "E-mail",
-    descriptionKey: "contact.emailAddress",
-    linkKey: "contact.emailAddress",
-    linkPrefix: "mailto:",
-    icon: <MdOutlineEmail />,
-  },
-  {
-    title: "Telegram",
-    descriptionKey: "contact.telegramHandle",
-    link: "https://t.me/katerina_dorozhkina",
-    icon: <BsTelegram />,
-  },
-];
+import { CONTACTS_OPTIONS } from "@/constants/contactsOptions";
 
 /** Секция контактов с быстрыми каналами связи и формой EmailJS. */
 export const Contact = ({
   sectionRef,
 }: {
   /** Ref секции для Scrollspy и якорной навигации. */
-  sectionRef: React.RefObject<HTMLDivElement>;
+  sectionRef: RefObject<HTMLDivElement>;
 }) => {
   const { t } = useTranslation();
   const { contactForm, status, submitForm } = useContact();
@@ -43,7 +28,7 @@ export const Contact = ({
             <p>{t("contact.cooperation")}</p>
           </div>
           <div className={styles.options}>
-            {contactOptions.map((option) => {
+            {CONTACTS_OPTIONS.map((option) => {
               const href =
                 option.link ?? `${option.linkPrefix}${t(option.linkKey ?? "")}`;
 

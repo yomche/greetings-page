@@ -132,7 +132,7 @@ export const defaultLocales: Resource = {
       "contact.status.sent": "Сообщение отправлено!",
       "contact.status.error": "Не удалось отправить сообщение.",
 
-      "footer.copyright": "yomche © 2023",
+      "footer.copyright": "yomche © 2026",
       "common.externalLink": "Открывается в новой вкладке",
     },
   },
@@ -266,7 +266,7 @@ export const defaultLocales: Resource = {
       "contact.status.sent": "Message sent!",
       "contact.status.error": "Message failed to send.",
 
-      "footer.copyright": "yomche © 2023",
+      "footer.copyright": "yomche © 2026",
       "common.externalLink": "Opens in a new tab",
     },
   },

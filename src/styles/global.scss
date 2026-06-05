@@ -1,39 +1,35 @@
 @font-face {
   font-family: "Crassula";
-  src        : url("./font/crassula/crassula_medium.woff2") format("woff2"), url("./font/crassula/crassula_medium.woff") format("woff");
+  src:
+    url("./font/crassula/crassula_medium.woff2") format("woff2"),
+    url("./font/crassula/crassula_medium.woff") format("woff");
   font-weight: normal;
-  font-style : normal;
-}
-@font-face {
-  font-family: "Motzeda";
-  src        : url("./font/motzeda/motzeda_italic.ttf") format("truetype");
-  font-weight: normal;
-  font-style : normal;
+  font-style: normal;
 }
 
 * {
-  margin         : 0;
-  padding        : 0;
-  border         : 0;
-  outline        : 0;
-  box-sizing     : border-box;
-  list-style     : none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none;
   text-decoration: none;
 }
 
 :root {
-  --error      : #CC0000;
-  --success    : #006600;
-  --loading    : #0066CC;
-  --white      : #ffffff;
-  --beige      : #F4E6E0;
-  --deep-beige : #B6A89C;
-  --middle-gray: #716F6F;
-  --deep-gray  : #4F4D4D;
-  --dark-gray  : #3E3E3E;
-  --black      : #222121;
-  --lg-width   : 75%;
-  --sm-width   : 90%;
+  --error: #cc0000;
+  --success: #006600;
+  --loading: #0066cc;
+  --white: #ffffff;
+  --beige: #f4e6e0;
+  --deep-beige: #b6a89c;
+  --middle-gray: #716f6f;
+  --deep-gray: #4f4d4d;
+  --dark-gray: #3e3e3e;
+  --black: #222121;
+  --lg-width: 75%;
+  --sm-width: 90%;
 }
 
 html {
@@ -45,17 +41,16 @@ html {
 }
 
 body {
-  font-family     : "Crassula";
-  color           : var(--dark-gray);
+  font-family: "Crassula";
+  color: var(--dark-gray);
   background-color: var(--beige);
-  line-height     : 1.7;
-
+  line-height: 1.7;
 }
 
 h1 {
-  font-family: 'Motzeda';
-  font-size  : 40px;
+  font-size: 40px;
   font-weight: 700;
+  margin-bottom: 30px;
 }
 
 h5 {
@@ -63,9 +58,11 @@ h5 {
 }
 
 .main {
-  width : var(--lg-width);
+  width: var(--lg-width);
   margin: 0 auto;
+  min-height: 100vh;
 }
+
 @media screen and (max-width: 600px) {
   .main {
     width: var(--sm-width);

@@ -1,2 +1,2 @@
-export { navLinks } from "./navLinks";
-export { stories } from "./storiesLinks";
+export { NAV_LINKS } from "./navLinks";
+export { CONTACTS_OPTIONS } from "./contactsOptions";

@@ -16,7 +16,7 @@ type NavLink = {
 };
 
 /** Основные якоря одностраничного сайта. */
-export const navLinks: NavLink[] = [
+export const NAV_LINKS: NavLink[] = [
   { labelKey: "nav.home", path: "#home", icon: <AiOutlineHome /> },
   { labelKey: "nav.about", path: "#about", icon: <AiOutlineUser /> },
   {

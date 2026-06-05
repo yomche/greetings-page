@@ -1,14 +1,14 @@
 .navigation {
-  width        : max-content;
-  padding      : 11px 25px;
-  display      : flex;
-  gap          : 10px;
-  position     : fixed;
-  z-index      : 2;
-  bottom       : 30px;
-  left         : 50%;
+  width: max-content;
+  padding: 11px 25px;
+  display: flex;
+  gap: 10px;
+  position: fixed;
+  z-index: 2;
+  bottom: 30px;
+  left: 50%;
   border-radius: 60px;
-  background   : rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(15px);
-  transform    : translateX(-50%);
+  transform: translateX(-50%);
 }

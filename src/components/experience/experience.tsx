@@ -1,13 +1,8 @@
 import type { RefObject } from "react";
-import { useRef, useState } from "react";
 
 import { AiOutlineBranches } from "react-icons/ai";
-import { Autoplay } from "swiper/modules";
-import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
-
-import { stories } from "@constants";
 
 import styles from "./experience.module.scss";
 import "swiper/css";
@@ -40,24 +35,15 @@ export const Experience = ({
   const experiences = t("experience.jobs", {
     returnObjects: true,
   }) as WorkExperience[];
-  const [sliderId, setSliderId] = useState(1);
-  const progressBar = useRef<HTMLDivElement>(null);
-
-  /** Обновляет CSS-переменную прогресса активного autoplay-слайда. */
-  const onAutoplayTimeLeft = (
-    swiper: SwiperClass,
-    timeLeft: number,
-    progress: number
-  ) => {
-    progressBar.current &&
-      progressBar.current.style.setProperty("--progress", String(1 - progress));
-  };
 
   return (
     <div ref={sectionRef} className={classNames("main", styles.container)}>
       <h1 id="experience">{t("experience.title")}</h1>
       <div className={styles.wrapper}>
-        <section className={styles.experience} aria-labelledby="experience-tree-title">
+        <section
+          className={styles.experience}
+          aria-labelledby="experience-tree-title"
+        >
           <div className={styles.treeHeader}>
             <div className={styles.treeIcon}>
               <AiOutlineBranches />
@@ -95,52 +81,6 @@ export const Experience = ({
             ))}
           </div>
         </section>
-        <div className={styles.swiper}>
-          <Swiper
-            slidesPerView={"auto"}
-            centeredSlides={true}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
-            modules={[Autoplay]}
-            onAutoplayTimeLeft={onAutoplayTimeLeft}
-            onReachBeginning={() => {
-              setSliderId(1);
-            }}
-            onSlideNextTransitionStart={() => {
-              setSliderId(sliderId + 1);
-            }}
-            onSlidePrevTransitionEnd={() => {
-              setSliderId(sliderId !== 1 ? sliderId - 1 : 1);
-            }}
-          >
-            <div className={styles.slideTitle}></div>
-            {stories.map((story) => (
-              <SwiperSlide className={styles.slide} key={story.id}>
-                <p className={styles.title}>{story.name}</p>
-                <div className={styles.image}>
-                  <img src={story.image} alt={story.name} />
-                </div>
-                <a className={styles.button} href={story.link}>
-                  {t("experience.openDemo")}
-                </a>
-              </SwiperSlide>
-            ))}
-            <div className={styles.progressCont} ref={progressBar}>
-              {stories.map((story) => (
-                <div
-                  key={story.id}
-                  className={classNames(
-                    styles.bar,
-                    story.id === sliderId && styles.progress,
-                    story.id < sliderId && styles.active
-                  )}
-                ></div>
-              ))}
-            </div>
-          </Swiper>
-        </div>
       </div>
     </div>
   );
